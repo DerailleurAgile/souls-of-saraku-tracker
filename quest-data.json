@@ -1,0 +1,59 @@
+{
+  "character": {
+    "name": "Severin Mortis",
+    "class": "Deathweaver",
+    "stats": {
+      "hp": 10,
+      "max_hp": 10,
+      "spell_points": 2
+    }
+  },
+  "quest_progress": {
+    "current_date": "2026-01-09",
+    "completed_days": [
+      {
+        "date": "2026-01-01",
+        "event": "Deciphered Message",
+        [cite_start]"outcome": "Success (Roll 16). Decrypted message via magic[cite: 1, 7]."
+      },
+      {
+        "date": "2026-01-02",
+        "event": "Ritual Prep",
+        "outcome": "Partial Success. [cite_start]Spell Effectiveness reached 3[cite: 1, 9]."
+      },
+      {
+        "date": "2026-01-03/04",
+        "event": "Ritual Start (Weekend)",
+        [cite_start]"outcome": "Prepared the obsidian orb with the High Mage[cite: 1, 10]."
+      },
+      {
+        "date": "2026-01-05",
+        "event": "Peer into the Orb",
+        "outcome": "Result 18. Witnessed 700+ troops in Ashwood Forest."
+      },
+      {
+        "date": "2026-01-06",
+        "event": "Harness Soul Power",
+        "outcome": "Success (Roll 17). Reinforced Citadel wards using the Soul Crystal."
+      },
+      {
+        "date": "2026-01-07",
+        "event": "Ritual of Release",
+        "outcome": "Success (Roll 13). Triggered a burst of energy creating a protective magical fog."
+      },
+      {
+        "date": "2026-01-08",
+        "event": "Fortify Gates",
+        "outcome": "Success (Roll 19). Animated skeletal remains to guard the main gates."
+      },
+      {
+        "date": "2026-01-09",
+        "event": "First Skirmish",
+        "outcome": "Victory. Defeated 1 Paladin scout; the others fled into the fog."
+      }
+    ],
+    "active_modifiers": {
+      "spell_effectiveness": 3
+    }
+  }
+}
