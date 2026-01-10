@@ -111,7 +111,6 @@ function renderStats(char, quest) {
     statsContainer.innerHTML = `
         <div class="stat-card ${char.image ? 'has-portrait' : ''}">
             ${portraitHtml}
-            <div class="stat-label">Character</div>
             <div class="stat-value">${char.name}</div>
             <div class="stat-label" style="margin-top: 15px;">Class</div>
             <div class="stat-value" style="font-size: 1.5em;">${char.class}</div>
