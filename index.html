@@ -287,15 +287,32 @@
 
         async function loadQuestDataFromFile(filename) {
             try {
-                const response = await fetch(filename);
+                // Add cache busting and explicit path
+                const timestamp = new Date().getTime();
+                const response = await fetch(`./${filename}?t=${timestamp}`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    cache: 'no-cache'
+                });
+                
                 if (!response.ok) {
-                    throw new Error('File not found');
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
+                
                 const data = await response.json();
                 renderQuestData(data);
                 uploadSection.classList.add('hidden');
+                errorContainer.innerHTML = '<div style="background: rgba(34, 197, 94, 0.2); border: 2px solid #22c55e; color: #86efac; padding: 15px; border-radius: 8px; margin-bottom: 20px;">✓ Quest data loaded successfully!</div>';
+                
+                // Hide success message after 3 seconds
+                setTimeout(() => {
+                    errorContainer.innerHTML = '';
+                }, 3000);
             } catch (err) {
-                console.log('Auto-load failed, waiting for manual upload:', err);
+                console.error('Auto-load failed:', err);
+                errorContainer.innerHTML = `<div style="background: rgba(251, 191, 36, 0.2); border: 2px solid #fbbf24; color: #fde68a; padding: 15px; border-radius: 8px; margin-bottom: 20px;">⚠️ Could not auto-load quest-data.json. Please upload manually or check console for details.<br><small>Error: ${err.message}</small></div>`;
                 // Keep upload section visible if auto-load fails
             }
         }
@@ -369,7 +386,9 @@
         }
 
         function formatDate(dateStr) {
-            const date = new Date(dateStr);
+            // Parse as local date to avoid timezone issues
+            const [year, month, day] = dateStr.split(/[-\/]/);
+            const date = new Date(year, month - 1, day);
             return date.toLocaleDateString('en-US', { 
                 year: 'numeric', 
                 month: 'long', 

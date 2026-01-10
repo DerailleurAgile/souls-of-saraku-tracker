@@ -14,17 +14,17 @@
       {
         "date": "2026-01-01",
         "event": "Deciphered Message",
-        [cite_start]"outcome": "Success (Roll 16). Decrypted message via magic[cite: 1, 7]."
+        "outcome": "Success (Roll 16). Decrypted message via magic."
       },
       {
         "date": "2026-01-02",
         "event": "Ritual Prep",
-        "outcome": "Partial Success. [cite_start]Spell Effectiveness reached 3[cite: 1, 9]."
+        "outcome": "Partial Success. Spell Effectiveness reached 3."
       },
       {
-        "date": "2026-01-03/04",
+        "date": "2026-01-03",
         "event": "Ritual Start (Weekend)",
-        [cite_start]"outcome": "Prepared the obsidian orb with the High Mage[cite: 1, 10]."
+        "outcome": "Prepared the obsidian orb with the High Mage."
       },
       {
         "date": "2026-01-05",
