@@ -101,8 +101,16 @@ function renderStats(char, quest) {
         modifierBadges += `<div class="modifier-badge">✨ ${label}: +${value}</div>`;
     }
 
+    // Character portrait (if provided)
+    const portraitHtml = char.image ? `
+        <div class="character-portrait">
+            <img src="${char.image}" alt="${char.name}">
+        </div>
+    ` : '';
+
     statsContainer.innerHTML = `
-        <div class="stat-card">
+        <div class="stat-card ${char.image ? 'has-portrait' : ''}">
+            ${portraitHtml}
             <div class="stat-label">Character</div>
             <div class="stat-value">${char.name}</div>
             <div class="stat-label" style="margin-top: 15px;">Class</div>

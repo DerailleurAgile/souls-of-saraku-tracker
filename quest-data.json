@@ -2,6 +2,7 @@
   "character": {
     "name": "Severin Mortis",
     "class": "Deathweaver",
+    "image": "severin_mortis_token.png",
     "stats": {
       "hp": 10,
       "max_hp": 10,
