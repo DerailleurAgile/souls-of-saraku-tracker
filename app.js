@@ -111,6 +111,7 @@ function renderStats(char, quest) {
     statsContainer.innerHTML = `
         <div class="stat-card ${char.image ? 'has-portrait' : ''}">
             ${portraitHtml}
+            <div class="stat-label">Character</div>
             <div class="stat-value">${char.name}</div>
             <div class="stat-label" style="margin-top: 15px;">Class</div>
             <div class="stat-value" style="font-size: 1.5em;">${char.class}</div>
@@ -199,7 +200,10 @@ function renderTimeline(completedDays, currentDate, monthFilter) {
         return;
     }
     
-    timeline.innerHTML = filteredDays.map(day => {
+    // Reverse the array to show most recent first
+    const reversedDays = [...filteredDays].reverse();
+    
+    timeline.innerHTML = reversedDays.map(day => {
         const isToday = day.date === currentDate;
         const formattedDate = formatDate(day.date);
         const outcomeHtml = formatOutcome(day.outcome);
