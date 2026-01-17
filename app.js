@@ -203,8 +203,10 @@ function renderTimeline(completedDays, currentDate, monthFilter) {
     // Reverse the array to show most recent first
     const reversedDays = [...filteredDays].reverse();
     
-    timeline.innerHTML = reversedDays.map(day => {
-        const isToday = day.date === currentDate;
+    timeline.innerHTML = reversedDays.map((day, index) => {
+        // Only the first item (most recent) gets the "current-day" styling if it matches current_date
+        // Check for exact match or if the date string contains the current date (handles ranges like "2026-01-17/18")
+        const isToday = index === 0 && (day.date === currentDate || day.date.includes(currentDate));
         const formattedDate = formatDate(day.date);
         const outcomeHtml = formatOutcome(day.outcome);
         
@@ -219,7 +221,26 @@ function renderTimeline(completedDays, currentDate, monthFilter) {
 }
 
 function formatDate(dateStr) {
-    const [year, month, day] = dateStr.split(/[-\/]/);
+    // Handle date ranges like "2026-01-17/18"
+    if (dateStr.includes('/')) {
+        const parts = dateStr.split('/');
+        const [year, month, day1] = parts[0].split('-');
+        const day2 = parts[1];
+        const date1 = new Date(year, month - 1, day1);
+        const date2 = new Date(year, month - 1, day2);
+        
+        const month1 = date1.toLocaleDateString('en-US', { month: 'long' });
+        const month2 = date2.toLocaleDateString('en-US', { month: 'long' });
+        
+        // If same month, show "January 17-18, 2026"
+        if (month1 === month2) {
+            return `${month1} ${day1}-${day2}, ${year}`;
+        }
+        // If different months, show full dates
+        return `${date1.toLocaleDateString('en-US', { month: 'long', day: 'numeric' })}-${date2.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}`;
+    }
+    
+    const [year, month, day] = dateStr.split('-');
     const date = new Date(year, month - 1, day);
     return date.toLocaleDateString('en-US', { 
         year: 'numeric', 

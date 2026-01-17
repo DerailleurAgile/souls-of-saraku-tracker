@@ -10,7 +10,7 @@
     }
   },
   "quest_progress": {
-    "current_date": "2026-01-10",
+    "current_date": "2026-01-17",
     "completed_days": [
       {
         "date": "2026-01-01",
@@ -53,13 +53,44 @@
         "outcome": "Victory. Defeated 1 Paladin scout; the others fled into the fog."
       },
       {
-        "date": "2026-01-10",
+        "date": "2026-01-10/11",
         "event": "Bolster Gate Wards (Weekend)",
-        "outcome": "Success (Roll 19). Wards reinforced; gates are magically fortified."
+        "outcome": "Success (Roll 19). Wards reinforced. Rested to full Spell Points."
+      },
+      {
+        "date": "2026-01-12",
+        "event": "The Breach",
+        "outcome": "Victory. Defeated 2 Sun-Blessed Knights using Blight Touch and Bone Shield. Survived with 3 HP remaining."
+      },
+      {
+        "date": "2026-01-13",
+        "event": "The Soul Strike",
+        "outcome": "Success (Roll 19). Disrupted the Paladins' prayer circle, preventing a breach."
+      },
+      {
+        "date": "2026-01-14",
+        "event": "The Siege Tower",
+        "outcome": "Success (Total 12). Destroyed the Sun-Forged Siege Tower. Narrowly avoided recoil damage."
+      },
+      {
+        "date": "2026-01-15",
+        "event": "The Duel of Wills",
+        "outcome": "Critical Success (Total 21). Used Arcane Knowledge to reroll and broke High Inquisitor Valerius's concentration."
+      },
+      {
+        "date": "2026-01-16",
+        "event": "Holding the Breach",
+        "outcome": "Victory! Defeated the Squire and Hounds. Survived with 1 HP and 0 SP remaining -- made it to the weekend to rest!"
+      },
+      {
+        "date": "2026-01-17/18",
+        "event": "Weekend Rest",
+        "outcome": "Recovered full stats. Chose Ghostly Armor (+1 Defense for next week)."
       }
     ],
     "active_modifiers": {
-      "spell_effectiveness": 3
+      "spell_effectiveness": 3,
+      "ghostly_armor": 1
     }
   }
 }
