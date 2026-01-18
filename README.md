@@ -7,3 +7,6 @@ python -m http.server
 ```
 
 In a browser navigate to ```localhost:8000```
+
+## Show the Tracker and Current Progress
+See here: https://derailleuragile.github.io/souls-of-saraku-tracker/
